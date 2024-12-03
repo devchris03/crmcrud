@@ -1,4 +1,5 @@
 import {showAlert} from './funciones.js';
+import {newClient} from './api.js';
 
 (function() {
     const form = document.querySelector('#form');
@@ -26,7 +27,8 @@ import {showAlert} from './funciones.js';
             return;
         }
 
-        showAlert('Cliente registrado', 'success')
+        showAlert('Cliente registrado', 'success');
+        newClient(objClient);
     }
 
     // Valida valores del formulario
