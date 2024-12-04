@@ -16,3 +16,8 @@ export function showAlert(msg, type) {
         }, 3000)
     }
 }
+
+// Valida valores del formulario
+export function validate(obj) {
+    return !Object.values(obj).every(input => input !== '')
+}

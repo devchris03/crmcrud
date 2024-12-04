@@ -1,4 +1,4 @@
-import {showAlert} from './funciones.js';
+import {showAlert, validate} from './funciones.js';
 import {newClient} from './api.js';
 
 (function() {
@@ -30,11 +30,5 @@ import {newClient} from './api.js';
         showAlert('Cliente registrado', 'success');
         newClient(objClient);
     }
-
-    // Valida valores del formulario
-    function validate(obj) {
-        return !Object.values(obj).every(input => input !== ''.trim())
-    }
-
 
 })();
