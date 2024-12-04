@@ -28,3 +28,15 @@ export const getCliente = async () => {
         console.log(error)
     }
 }
+
+
+// elimina cliente
+export const deleteRegister = async id => {
+    try {
+        await fetch(`${url}/${id}`, {
+            method: 'DELETE',
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}

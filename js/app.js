@@ -1,9 +1,10 @@
-import {getCliente} from './api.js';
+import {getCliente, deleteRegister} from './api.js';
 
 (function() {
     const list = document.querySelector('#list');
 
     window.addEventListener('DOMContentLoaded', showClient);
+    list.addEventListener('click', confirmClient);
 
     // muestra clientes
     async function showClient() {
@@ -29,5 +30,19 @@ import {getCliente} from './api.js';
 
             list.appendChild(item);
         })
+    }
+
+    // confirma eliminación de cliente
+    function confirmClient(event) {
+        if(event.target.classList.contains('delete')) {
+            
+            const clientId = event.target.dataset.cliente;
+            
+            const result = confirm('¿Deseas eliminar este registro?');
+
+            if(result) {
+                deleteRegister(clientId);
+            }
+        }
     }
 }) ()
