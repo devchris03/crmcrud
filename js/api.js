@@ -40,3 +40,15 @@ export const deleteRegister = async id => {
         console.log(error)
     }
 }
+
+
+// obtiene datos del cliente
+export const getData = async id => {
+    try {
+        const result = await fetch(`${url}/${id}`);
+        const resultado = result.json();
+        return resultado;
+    } catch (error) {
+        console.log(error)
+    }
+} 
